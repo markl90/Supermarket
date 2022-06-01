@@ -1,6 +1,6 @@
 package supermarket;
 
-import Pricingrules.PricingRule;
+import pricingrules.PricingRule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ public class Supermarket {
         Collections.addAll(products, product);
     }
 
-    private void addProduct(Product product){
+    public void addProduct(Product product){
         products.add(product);
     }
 
@@ -29,7 +29,11 @@ public class Supermarket {
         return null;
     }
 
-    private void addPricingRule(PricingRule pricingRule){
-        pricingRules.add(pricingRule);
+    public void addPricingRule(PricingRule... pricingRule){
+        Collections.addAll(pricingRules, pricingRule);
+    }
+
+    public ArrayList<PricingRule> getPricingRules() {
+        return pricingRules;
     }
 }
