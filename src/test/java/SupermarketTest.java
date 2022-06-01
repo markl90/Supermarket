@@ -156,6 +156,7 @@ public class SupermarketTest {
         supermarket.addPricingRule(threeFor130);
         supermarket.addPricingRule(twoFor45);
         checkout.addProducts("A", "A", "A", "B", "B");
+        Assertions.assertEquals(expectedPrice, checkout.calculateTotal());
     }
 
     @Test
@@ -166,6 +167,7 @@ public class SupermarketTest {
         supermarket.addPricingRule(threeFor130);
         supermarket.addPricingRule(twoFor45);
         checkout.addProducts("A", "A", "A", "B", "B", "C", "D");
+        Assertions.assertEquals(expectedPrice, checkout.calculateTotal());
     }
 
     private double sumProductPrices(String... SKU){
